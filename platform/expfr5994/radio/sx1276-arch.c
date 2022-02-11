@@ -317,11 +317,11 @@ sx1276_radio_channel_clear(void) // Contikimac executes this function twice
     CadDone = false;
     CadDetected = false;
     sx1276_start_cad();
-    #if RTIMER_ARCH_SECOND == 32768
-      rtimer_arch_sleep_until((RTIMER_ARCH_SECOND/20), &CadDone); // Timer A0 has 16384 Hz, so cut wait period in half
-    #elif RTIMER_ARCH_SECOND == 16384
-      rtimer_arch_sleep_until(RTIMER_ARCH_SECOND/10, &CadDone);
-    #endif
+#if RTIMER_ARCH_SECOND == 32768
+    rtimer_arch_sleep_until((RTIMER_ARCH_SECOND/20), &CadDone); // Timer A0 has 16384 Hz, so cut wait period in half
+#elif RTIMER_ARCH_SECOND == 16384
+    rtimer_arch_sleep_until(RTIMER_ARCH_SECOND/10, &CadDone);
+#endif
     if(CadDetected){
       PacketDetected++;
     }
