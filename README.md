@@ -9,8 +9,6 @@ This repository contains a modified version of Contiki OS with support for the M
 
 ## Problem
 
-## Problem
-
 Precision agriculture applications involve collecting environmental data from large areas using wireless sensor networks. These networks must operate under strict constraints regarding transmission range, packet delivery rate, latency, and battery life. LoRa technology can provide long-range communication for low-power devices, but most deployments rely on single-hop architectures. This project explores the use of the RPL in order to enable multihop communication in LoRa sensor networks, extending coverage and improving scalability.
 
 ## Repository Structure
@@ -30,4 +28,4 @@ Precision agriculture applications involve collecting environmental data from la
 
 ## Platform
 
-This project is implemented on top of Contiki, an open-source operating system for IoT devices.
+This project is implemented on top of Contiki (https://github.com/contiki-os/contiki), an open-source operating system for IoT devices.
