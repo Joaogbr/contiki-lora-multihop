@@ -1,19 +1,33 @@
-The Contiki Operating System
-============================
+# LoRa multihop communication using RPL
 
-[![Build Status](https://travis-ci.org/contiki-os/contiki.svg?branch=master)](https://travis-ci.org/contiki-os/contiki/branches)
+## Overview
 
-Contiki is an open source operating system that runs on tiny low-power
-microcontrollers and makes it possible to develop applications that
-make efficient use of the hardware while providing standardized
-low-power wireless communication for a range of hardware platforms.
+This repository contains a modified version of Contiki OS with support for the MSP-EXP430FR5994 LaunchPad and the SX1276 LoRa radio transceiver. The project enables LoRa-based multihop communication using the RPL routing protocol, allowing data collection over large agricultural areas. Example applications can be found in:
+- `examples/LoRa-transmitter`
+- `examples/LoRa-receiver`
+- `examples/LoRa-tests`
 
-Contiki is used in numerous commercial and non-commercial systems,
-such as city sound monitoring, street lights, networked electrical
-power meters, industrial monitoring, radiation monitoring,
-construction site monitoring, alarm systems, remote house monitoring,
-and so on.
+## Problem
 
-For more information, see the Contiki website:
+## Problem
 
-[http://contiki-os.org](http://contiki-os.org)
+Precision agriculture applications involve collecting environmental data from large areas using wireless sensor networks. These networks must operate under strict constraints regarding transmission range, packet delivery rate, latency, and battery life. LoRa technology can provide long-range communication for low-power devices, but most deployments rely on single-hop architectures. This project explores the use of the RPL in order to enable multihop communication in LoRa sensor networks, extending coverage and improving scalability.
+
+## Repository Structure
+
+- `platform/expfr5994` – platform support for the MSP-EXP430FR5994 LaunchPad 
+- `platform/expfr5994/radio` – implementation of the SX1276 LoRa transceiver  
+- `examples/LoRa-tests` – code used for field evaluation, tests 5-7 enable LoRa multihop communication with RPL
+
+## Compiling the Code for MSP-EXP430FR5994 with SX1276
+
+1. Clone this repository
+2. Navigate to one of the example directories:
+   - `examples/LoRa-transmitter`
+   - `examples/LoRa-receiver`
+   - `examples/LoRa-tests`
+3. Compile the firmware using `make TARGET=expfr5994`
+
+## Platform
+
+This project is implemented on top of Contiki, an open-source operating system for IoT devices.
